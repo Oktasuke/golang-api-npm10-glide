@@ -1,6 +1,8 @@
 FROM golang:1.12
 
 RUN apt-get update
+RUN apt-get install --reinstall ca-certificates
+RUN apt-get --allow-releaseinfo-change update && apt upgrade -y
 RUN apt-get install -y netcat \
                        python \
                        python-pip \
